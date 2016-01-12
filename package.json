@@ -1,0 +1,19 @@
+{
+  "name": "bountyhuntersserver",
+  "version": "0.0.1",
+  "description": "Bounty hunters server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtongers/bountyhuntersserver.git"
+  },
+  "author": "jtongers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jtongers/bountyhuntersserver/issues"
+  },
+  "homepage": "https://github.com/jtongers/bountyhuntersserver#readme"
+}
