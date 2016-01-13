@@ -10,18 +10,19 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'requirejs'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'build.spec/spec/**.spec.js'
+      'test-main.ts',
+      {pattern: 'build.spec/spec/**/*.spec.js', included: false},
+      {pattern: 'build.spec/src/**/*.js', included: false}
     ],
 
 
     // list of files to exclude
     exclude: [
-      'build.spec/src/**.js'
     ],
 
 
@@ -62,6 +63,12 @@ module.exports = function(config) {
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true,
+
+    plugins: [
+      'karma-jasmine',
+      'karma-requirejs',
+      'karma-chrome-launcher'
+    ],
 
     // Concurrency level
     // how many browser should be started simultanous

@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "commonjs",
-        "moduleResolution": "node",
+        "module": "amd",
+        "moduleResolution": "classic",
         "isolatedModules": false,
         "jsx": "react",
         "experimentalDecorators": true,
