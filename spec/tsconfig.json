@@ -13,7 +13,7 @@
         "noLib": false,
         "preserveConstEnums": true,
         "suppressImplicitAnyIndexErrors": true,
-        "outDir": "../build"
+        "outDir": "../build.spec/"
     },
     "filesGlob": [
         "**/*.ts",
@@ -21,8 +21,7 @@
         "!node_modules/**"
     ],
     "files": [
-        "helloworld.ts",
-        "main.ts"
+        "helloworld.spec.ts"
     ],
     "atom": {
         "rewriteTsconfig": true
