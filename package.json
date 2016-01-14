@@ -4,7 +4,7 @@
   "description": "Bounty hunters server",
   "main": "index.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "tsc -p . && gulp test"
   },
   "repository": {
     "type": "git",
