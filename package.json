@@ -4,7 +4,7 @@
   "description": "Bounty hunters server",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
