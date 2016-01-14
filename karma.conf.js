@@ -2,7 +2,7 @@
 // Generated on Wed Jan 13 2016 18:43:37 GMT+0000 (GMT Standard Time)
 
 module.exports = function(config) {
-  config.set({
+  var configuration = ({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
@@ -75,4 +75,11 @@ module.exports = function(config) {
     // how many browser should be started simultanous
     concurrency: Infinity
   });
+
+  if(process.env.TRAVIS){
+    configuration.browsers = ['PhantomJS'];
+    configuration.plugins.push('karma-phantomjs-launcher');
+  }
+
+  configuration.set(configuration);
 };
