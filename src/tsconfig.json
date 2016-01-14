@@ -21,8 +21,7 @@
         "!node_modules/**"
     ],
     "files": [
-        "helloworld.ts",
-        "main.ts"
+        "helloworld.ts"
     ],
     "atom": {
         "rewriteTsconfig": true
