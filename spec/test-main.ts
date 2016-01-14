@@ -1,5 +1,3 @@
-/// <reference path="../typings/requirejs/require.d.ts" />
-
 class TestMain {
   constructor() {
     const files: Array<any> = new Array<any>();
@@ -15,7 +13,7 @@ class TestMain {
       }
     });
 
-    require.config({
+    (require as any).config({
       // Karma serves files under /base, which is the basePath from your config file
       baseUrl: '/base',
 

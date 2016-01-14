@@ -22,6 +22,7 @@
     ],
     "files": [
         "helloworld.spec.ts",
+        "karma.conf.ts",
         "test-main.ts"
     ],
     "atom": {

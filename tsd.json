@@ -13,9 +13,6 @@
     },
     "jasmine/jasmine.d.ts": {
       "commit": "d1f6bde13f2209be42e86c3686761e8bfcbb50a5"
-    },
-    "requirejs/require.d.ts": {
-      "commit": "d1f6bde13f2209be42e86c3686761e8bfcbb50a5"
     }
   }
 }

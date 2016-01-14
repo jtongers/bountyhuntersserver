@@ -10,7 +10,7 @@
 
   gulp.task('test', ['test-build:spec', 'test-build:src'], () => {
     new Server({
-      configFile: __dirname + '/karma.conf.js',
+      configFile: __dirname + '/build.spec/spec/karma.conf.js',
       singleRun: true
     }).start();
   });
