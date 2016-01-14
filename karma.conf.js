@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test-main.ts',
+      'test-main.js',
       {pattern: 'build.spec/spec/**/*.spec.js', included: false},
       {pattern: 'build.spec/src/**/*.js', included: false}
     ],
@@ -74,5 +74,5 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultanous
     concurrency: Infinity
-  })
-}
+  });
+};
