@@ -81,5 +81,5 @@ module.exports = function(config) {
     configuration.plugins.push('karma-phantomjs-launcher');
   }
 
-  configuration.set(configuration);
+  config.set(configuration);
 };
