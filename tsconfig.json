@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "amd",
-        "moduleResolution": "classic",
+        "module": "commonjs",
+        "moduleResolution": "node",
         "isolatedModules": false,
         "jsx": "react",
         "experimentalDecorators": true,
@@ -12,18 +12,17 @@
         "removeComments": true,
         "noLib": false,
         "preserveConstEnums": true,
-        "suppressImplicitAnyIndexErrors": true,
-        "outDir": "../build"
+        "suppressImplicitAnyIndexErrors": true
     },
     "filesGlob": [
-        "**/*.ts",
-        "**/*.tsx",
-        "!node_modules/**"
+      "!node_modules/**",
+      "!src/**",
+      "!spec/**"
     ],
     "files": [
-        "helloworld.ts"
+        "gulpfile.ts"
     ],
     "atom": {
-        "rewriteTsconfig": true
+        "rewriteTsconfig": false
     }
 }
