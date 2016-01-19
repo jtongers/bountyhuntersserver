@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "amd",
+        "module": "umd",
         "moduleResolution": "classic",
         "isolatedModules": false,
         "jsx": "react",
@@ -21,7 +21,8 @@
         "!node_modules/**"
     ],
     "files": [
-        "helloworld.ts"
+        "helloworld.ts",
+        "loginserver.ts"
     ],
     "atom": {
         "rewriteTsconfig": true

@@ -9,13 +9,22 @@
       "commit": "984a41af67d76b5134e0d4991a30f813dfb8561f"
     },
     "node/node.d.ts": {
-      "commit": "984a41af67d76b5134e0d4991a30f813dfb8561f"
+      "commit": "93bae1bb4c887c1375a4c1f0c3bb849ff06b8ac6"
     },
     "jasmine/jasmine.d.ts": {
       "commit": "d1f6bde13f2209be42e86c3686761e8bfcbb50a5"
     },
     "requirejs/require.d.ts": {
       "commit": "d1f6bde13f2209be42e86c3686761e8bfcbb50a5"
+    },
+    "mime/mime.d.ts": {
+      "commit": "93bae1bb4c887c1375a4c1f0c3bb849ff06b8ac6"
+    },
+    "express/express.d.ts": {
+      "commit": "93bae1bb4c887c1375a4c1f0c3bb849ff06b8ac6"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "93bae1bb4c887c1375a4c1f0c3bb849ff06b8ac6"
     }
   }
 }
