@@ -29,8 +29,10 @@ var httpSocket = (http as any).Server(appSocket);
 
 var ioSocket = io(httpSocket);
 
-ioSocket.on('connection', function(socket){
-  console.log('a user connected');
+ioSocket.on('connection', (socket) => {
+  socket.on('chat message', (msg) => {
+    ioSocket.emit('chat message', msg);
+  });
 });
 
 httpSocket.listen(4001, () => {
