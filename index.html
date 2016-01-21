@@ -1,28 +1,64 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Socket.IO chat</title>
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
-    </style>
-  </head>
-  <body>
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
 
+<head>
+  <style type="text/css">
+    html, body { height: 100%; margin: 0; padding: 0; }
+    #map { height: 100%; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script type="text/javascript">
+      var map;
+      function initMap() {
+      window.googlemap = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 51.5882, lng: -0.5530},
+        zoom: 13
+      });
+
+      }
+
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+  </script>
     <script src="http://127.0.0.1:4001/socket.io/socket.io.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
-      var socket = io('127.0.0.1:4001');
+      $.post("http://localhost:3000/session", {}).then(function(response) {
+
+     var positions = { };
+      var socket = io(response.serverLocation);
+      socket.on("update-position", function(packet) {
+
+
+         if (!positions[packet.id]) {
+           positions[packet.id] = new google.maps.Marker({
+            map: window.googlemap,
+            position: { lat: packet.position.latitude, lng: packet.position.longitude },
+            title: 'Hello World!'
+          });
+        }
+        else {
+           positions[packet.id].setPosition({ lat: packet.position.latitude, lng: packet.position.longitude });
+        }
+     });
+
+     socket.on("player-disconnect", function(player) {
+        positions[player.id].setMap(null);
+        positions[player.id] = undefined;
+     });
+
+
+      window.googlemap.addListener('click', function(event) {
+      //map.setZoom(8);
+      //map.setCenter(marker.getPosition());
+        socket.emit('update-position', { latitude: event.latLng.lat(), longitude: event.latLng.lng() });
+
+
+   });
+   /*
       $('form').submit(function(){
         socket.emit('chat message', $('#m').val());
         $('#m').val('');
@@ -30,7 +66,8 @@
       });
       socket.on('chat message', function(msg){
         $('#messages').append($('<li>').text(msg));
-      });
+     });*/
+   });
     </script>
   </body>
 </html>

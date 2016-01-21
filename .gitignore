@@ -4,3 +4,5 @@ node_modules
 typings
 .jshintrc
 gulpfile.js
+
+keys.config
