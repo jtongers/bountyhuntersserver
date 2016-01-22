@@ -10,6 +10,6 @@ The gulpfile, `gulpfile.ts`, is written in TypeScript, so it needs to be built b
 
 You can run:
 
-   $ npm test
+    $ npm test
    
 This will build the gulpfile and then execute `gulp test`, which will kick off the test procedure.
