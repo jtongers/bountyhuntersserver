@@ -19,7 +19,7 @@ app.get('/', function(req, res){
   res.sendFile(path.resolve(__dirname, '../index.html'));
 });
 
-app.post('/session', (request, response) {
+app.post('/session', (request, response) => {
    response.send({ serverLocation: "http://localhost:4001"})
 });
 
